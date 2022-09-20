@@ -1,11 +1,11 @@
-import { config } from "dotenv/mod.ts";
+import { config } from "std/dotenv/mod.ts";
 import { Query } from "neo4j/core/types.ts";
 import neo4j, { QueryResult, Session } from "neo4j/mod.ts";
 
 import type { Driver } from "neo4j/mod.ts";
 import ApiError from "../errors/ApiError.ts";
 
-config({ export: true });
+await config({ export: true });
 
 const uri = Deno.env.get("NEO4J_URI") ?? "";
 const user = Deno.env.get("NEO4J_USER") ?? "";
